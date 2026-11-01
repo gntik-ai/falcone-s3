@@ -1,61 +1,61 @@
 ID,Type,Title,Parent,Phase,Effort,Dependencies,URL
-S3-CON,Epic,Falcone contracts and first-party scope,,,,,
-S3-CON-001,Story,Freeze storage API and deployment contract fixtures,S3-CON,P0,M,,
-S3-CON-002,Story,Define storage ownership and provider binding contracts,S3-CON,P0,M,S3-CON-001,
-S3-CON-003,Story,"Qualify components, capacity assumptions and licenses",S3-CON,P0,L,S3-CON-001,
-S3-PROV,Epic,Provider registry and external S3,,,,,
-S3-PROV-001,Story,Implement provider profiles and scoped storage bindings,S3-PROV,P1,L,S3-CON-002,
-S3-PROV-002,Story,Implement Amazon S3 general-purpose bucket adapter,S3-PROV,P1,L,S3-PROV-001;S3-AUTH-003;S3-KEY-002,
-S3-PROV-003,Story,Implement qualified S3 adapters and safe bucket adoption,S3-PROV,P1,L,S3-PROV-001;S3-AUTH-003;S3-KEY-002,
-S3-API,Epic,Falcone API and S3 protocol,,,,,
-S3-API-001,Story,Implement the compatible Falcone storage façade,S3-API,P1,L,S3-CON-001;S3-PROV-001;S3-AUTH-001,
-S3-API-002,Story,"Implement S3 routing, XML errors and SigV4 verification",S3-API,P1,L,S3-AUTH-002;S3-CON-003;S3-PROV-001,
-S3-API-003,Story,Publish and enforce SDK compatibility profiles,S3-API,P2,L,S3-API-001;S3-API-002;S3-PROV-002;S3-PROV-003;S3-MPU-002;S3-OBJ-002,
-S3-AUTH,Epic,"Identity, credentials and tenant isolation",,,,,
-S3-AUTH-001,Story,Integrate IAM authorization and policy freshness,S3-AUTH,P1,L,S3-CON-002,
-S3-AUTH-002,Story,Implement scoped S3 access-key lifecycle,S3-AUTH,P1,L,S3-AUTH-001;S3-KEY-002,
-S3-AUTH-003,Story,Implement external identity and least-privilege policy projection,S3-AUTH,P1,L,S3-AUTH-001;S3-PROV-001,
-S3-OBJ,Epic,Native object metadata and namespace,,,,,
-S3-OBJ-001,Story,Implement native CRUD and immutable metadata manifests,S3-OBJ,P1,L,S3-DATA-001;S3-AUTH-002,
-S3-OBJ-002,Story,"Implement conditional operations, ranges and scoped listing",S3-OBJ,P1,L,S3-OBJ-001,
-S3-OBJ-003,Story,"Implement versioning, delete markers and version references",S3-OBJ,P2,L,S3-OBJ-002,
-S3-MPU,Epic,"Large objects, multipart and transfer",,,,,
-S3-MPU-001,Story,Implement scoped multipart sessions and part upload,S3-MPU,P1,L,S3-OBJ-001;S3-QUOTA-001,
-S3-MPU-002,Story,"Implement atomic completion, abort and orphan cleanup",S3-MPU,P1,L,S3-MPU-001;S3-DATA-003,
-S3-MPU-003,Story,"Implement copy, presign and controlled streaming access",S3-MPU,P1,L,S3-MPU-001;S3-AUTH-003;S3-QUOTA-003,
-S3-DATA,Epic,"Native durability, repair and garbage collection",,,,,
-S3-DATA-001,Story,Implement the staged-byte and transactional commit protocol,S3-DATA,P1,L,S3-CON-003;S3-KEY-001;S3-QUOTA-001,
-S3-DATA-002,Story,"Implement qualified replication, scrubbing and repair",S3-DATA,P2,L,S3-DATA-001;S3-OPS-001,
-S3-DATA-003,Story,Implement reference-safe native garbage collection,S3-DATA,P1,L,S3-DATA-001,
-S3-LIFE,Epic,"Version lifecycle, retention and configuration",,,,,
-S3-LIFE-001,Story,"Implement capability-gated lifecycle, tags and CORS",S3-LIFE,P2,L,S3-OBJ-003;S3-PROV-003,
-S3-LIFE-002,Story,"Qualify Object Lock, retention and legal hold",S3-LIFE,P2,L,S3-LIFE-001;S3-KEY-001,
-S3-LIFE-003,Story,"Implement workflow, artifact and backup reference pins",S3-LIFE,P2,M,S3-OBJ-003;S3-DATA-003,
-S3-EVENT,Epic,Object events and Falcone triggers,,,,,
-S3-EVENT-001,Story,Implement native transactional event outbox,S3-EVENT,P1,M,S3-DATA-001;S3-CON-002,
-S3-EVENT-002,Story,Implement external notifications and reconciliation bridge,S3-EVENT,P2,L,S3-PROV-002;S3-PROV-003;S3-EVENT-001,
-S3-EVENT-003,Story,"Integrate event subscriptions, filtering and trigger safety",S3-EVENT,P2,M,S3-EVENT-002;S3-INT-001;S3-INT-002,
-S3-QUOTA,Epic,"Falcone quotas, usage and fairness",,,,,
-S3-QUOTA-001,Story,Implement Falcone quota admission and reservations,S3-QUOTA,P1,L,S3-CON-002;S3-AUTH-001,
-S3-QUOTA-002,Story,Implement usage accounting and provider reconciliation,S3-QUOTA,P1,L,S3-QUOTA-001;S3-PROV-001,
-S3-QUOTA-003,Story,Enforce direct-access policy and tenant fairness,S3-QUOTA,P1,M,S3-QUOTA-001;S3-PROV-001,
-S3-KEY,Epic,"Encryption, secret custody and network security",,,,,
-S3-KEY-001,Story,Implement native envelope encryption and key lifecycle,S3-KEY,P1,L,S3-CON-003;S3-AUTH-001,
-S3-KEY-002,Story,Integrate recoverable provider credentials and independent bootstrap,S3-KEY,P1,M,S3-CON-002;S3-AUTH-001,
-S3-KEY-003,Story,"Harden endpoint access, parsing and audit boundaries",S3-KEY,P1,L,S3-KEY-002;S3-API-002,
-S3-INT,Epic,Falcone consumer integration,,,,,
-S3-INT-001,Story,"Integrate serverless artifacts, results and checkpoints",S3-INT,P2,L,S3-API-001;S3-OBJ-003;S3-MPU-003;S3-LIFE-003,
-S3-INT-002,Story,Integrate workflow storage activities and large payloads,S3-INT,P2,L,S3-API-001;S3-OBJ-003;S3-LIFE-003,
-S3-INT-003,Story,"Integrate console, analytics and platform backup status",S3-INT,P2,M,S3-API-001;S3-PROV-003;S3-QUOTA-002;S3-OPS-003,
-S3-OPS,Epic,"Deployment, observability and recovery",,,,,
-S3-OPS-001,Story,Package restricted and external-only deployments,S3-OPS,P1,L,S3-CON-003;S3-PROV-001,
-S3-OPS-002,Story,"Implement storage SLOs, telemetry and incident runbooks",S3-OPS,P2,M,S3-OPS-001;S3-QUOTA-002;S3-EVENT-001,
-S3-OPS-003,Story,Implement coordinated backup and disaster recovery,S3-OPS,P2,L,S3-OPS-001;S3-KEY-001;S3-LIFE-003;S3-DATA-002,
-S3-MIG,Epic,"Migration, cutover and SeaweedFS retirement",,,,,
-S3-MIG-001,Story,Implement inventory and resumable verified transfers,S3-MIG,P2,L,S3-CON-001;S3-PROV-001,
-S3-MIG-002,Story,Implement fenced canary cutover and reconciled rollback,S3-MIG,P3,L,S3-MIG-001;S3-DEV-003;S3-INT-001;S3-INT-002;S3-INT-003,
-S3-MIG-003,Story,Retire migrated SeaweedFS dependencies with evidence,S3-MIG,P3,M,S3-MIG-002;S3-OPS-003,
-S3-DEV,Epic,Developer tooling and independent qualification,,,,,
-S3-DEV-001,Story,"Publish versioned schemas, SDK examples and local fixtures",S3-DEV,P1,M,S3-CON-001;S3-PROV-001,
-S3-DEV-002,Story,Implement secure builds and maintenance policy,S3-DEV,P1,M,S3-CON-003,
-S3-DEV-003,Story,"Qualify protocol, isolation and durability independently",S3-DEV,P2,L,S3-API-003;S3-KEY-003;S3-DATA-002;S3-OPS-003;S3-EVENT-002;S3-DEV-002,
+S3-CON,Epic,Falcone contracts and first-party scope,,,,,https://github.com/gntik-ai/falcone-s3/issues/1
+S3-CON-001,Story,Freeze storage API and deployment contract fixtures,S3-CON,P0,M,,https://github.com/gntik-ai/falcone-s3/issues/16
+S3-CON-002,Story,Define storage ownership and provider binding contracts,S3-CON,P0,M,S3-CON-001,https://github.com/gntik-ai/falcone-s3/issues/17
+S3-CON-003,Story,"Qualify components, capacity assumptions and licenses",S3-CON,P0,L,S3-CON-001,https://github.com/gntik-ai/falcone-s3/issues/18
+S3-PROV,Epic,Provider registry and external S3,,,,,https://github.com/gntik-ai/falcone-s3/issues/2
+S3-PROV-001,Story,Implement provider profiles and scoped storage bindings,S3-PROV,P1,L,S3-CON-002,https://github.com/gntik-ai/falcone-s3/issues/19
+S3-PROV-002,Story,Implement Amazon S3 general-purpose bucket adapter,S3-PROV,P1,L,S3-PROV-001;S3-AUTH-003;S3-KEY-002,https://github.com/gntik-ai/falcone-s3/issues/20
+S3-PROV-003,Story,Implement qualified S3 adapters and safe bucket adoption,S3-PROV,P1,L,S3-PROV-001;S3-AUTH-003;S3-KEY-002,https://github.com/gntik-ai/falcone-s3/issues/21
+S3-API,Epic,Falcone API and S3 protocol,,,,,https://github.com/gntik-ai/falcone-s3/issues/3
+S3-API-001,Story,Implement the compatible Falcone storage façade,S3-API,P1,L,S3-CON-001;S3-PROV-001;S3-AUTH-001,https://github.com/gntik-ai/falcone-s3/issues/22
+S3-API-002,Story,"Implement S3 routing, XML errors and SigV4 verification",S3-API,P1,L,S3-AUTH-002;S3-CON-003;S3-PROV-001,https://github.com/gntik-ai/falcone-s3/issues/23
+S3-API-003,Story,Publish and enforce SDK compatibility profiles,S3-API,P2,L,S3-API-001;S3-API-002;S3-PROV-002;S3-PROV-003;S3-MPU-002;S3-OBJ-002,https://github.com/gntik-ai/falcone-s3/issues/24
+S3-AUTH,Epic,"Identity, credentials and tenant isolation",,,,,https://github.com/gntik-ai/falcone-s3/issues/4
+S3-AUTH-001,Story,Integrate IAM authorization and policy freshness,S3-AUTH,P1,L,S3-CON-002,https://github.com/gntik-ai/falcone-s3/issues/25
+S3-AUTH-002,Story,Implement scoped S3 access-key lifecycle,S3-AUTH,P1,L,S3-AUTH-001;S3-KEY-002,https://github.com/gntik-ai/falcone-s3/issues/26
+S3-AUTH-003,Story,Implement external identity and least-privilege policy projection,S3-AUTH,P1,L,S3-AUTH-001;S3-PROV-001,https://github.com/gntik-ai/falcone-s3/issues/27
+S3-OBJ,Epic,Native object metadata and namespace,,,,,https://github.com/gntik-ai/falcone-s3/issues/5
+S3-OBJ-001,Story,Implement native CRUD and immutable metadata manifests,S3-OBJ,P1,L,S3-DATA-001;S3-AUTH-002,https://github.com/gntik-ai/falcone-s3/issues/28
+S3-OBJ-002,Story,"Implement conditional operations, ranges and scoped listing",S3-OBJ,P1,L,S3-OBJ-001,https://github.com/gntik-ai/falcone-s3/issues/29
+S3-OBJ-003,Story,"Implement versioning, delete markers and version references",S3-OBJ,P2,L,S3-OBJ-002,https://github.com/gntik-ai/falcone-s3/issues/30
+S3-MPU,Epic,"Large objects, multipart and transfer",,,,,https://github.com/gntik-ai/falcone-s3/issues/6
+S3-MPU-001,Story,Implement scoped multipart sessions and part upload,S3-MPU,P1,L,S3-OBJ-001;S3-QUOTA-001,https://github.com/gntik-ai/falcone-s3/issues/31
+S3-MPU-002,Story,"Implement atomic completion, abort and orphan cleanup",S3-MPU,P1,L,S3-MPU-001;S3-DATA-003,https://github.com/gntik-ai/falcone-s3/issues/32
+S3-MPU-003,Story,"Implement copy, presign and controlled streaming access",S3-MPU,P1,L,S3-MPU-001;S3-AUTH-003;S3-QUOTA-003,https://github.com/gntik-ai/falcone-s3/issues/33
+S3-DATA,Epic,"Native durability, repair and garbage collection",,,,,https://github.com/gntik-ai/falcone-s3/issues/7
+S3-DATA-001,Story,Implement the staged-byte and transactional commit protocol,S3-DATA,P1,L,S3-CON-003;S3-KEY-001;S3-QUOTA-001,https://github.com/gntik-ai/falcone-s3/issues/34
+S3-DATA-002,Story,"Implement qualified replication, scrubbing and repair",S3-DATA,P2,L,S3-DATA-001;S3-OPS-001,https://github.com/gntik-ai/falcone-s3/issues/35
+S3-DATA-003,Story,Implement reference-safe native garbage collection,S3-DATA,P1,L,S3-DATA-001,https://github.com/gntik-ai/falcone-s3/issues/36
+S3-LIFE,Epic,"Version lifecycle, retention and configuration",,,,,https://github.com/gntik-ai/falcone-s3/issues/8
+S3-LIFE-001,Story,"Implement capability-gated lifecycle, tags and CORS",S3-LIFE,P2,L,S3-OBJ-003;S3-PROV-003,https://github.com/gntik-ai/falcone-s3/issues/37
+S3-LIFE-002,Story,"Qualify Object Lock, retention and legal hold",S3-LIFE,P2,L,S3-LIFE-001;S3-KEY-001,https://github.com/gntik-ai/falcone-s3/issues/38
+S3-LIFE-003,Story,"Implement workflow, artifact and backup reference pins",S3-LIFE,P2,M,S3-OBJ-003;S3-DATA-003,https://github.com/gntik-ai/falcone-s3/issues/39
+S3-EVENT,Epic,Object events and Falcone triggers,,,,,https://github.com/gntik-ai/falcone-s3/issues/9
+S3-EVENT-001,Story,Implement native transactional event outbox,S3-EVENT,P1,M,S3-DATA-001;S3-CON-002,https://github.com/gntik-ai/falcone-s3/issues/40
+S3-EVENT-002,Story,Implement external notifications and reconciliation bridge,S3-EVENT,P2,L,S3-PROV-002;S3-PROV-003;S3-EVENT-001,https://github.com/gntik-ai/falcone-s3/issues/41
+S3-EVENT-003,Story,"Integrate event subscriptions, filtering and trigger safety",S3-EVENT,P2,M,S3-EVENT-002;S3-INT-001;S3-INT-002,https://github.com/gntik-ai/falcone-s3/issues/42
+S3-QUOTA,Epic,"Falcone quotas, usage and fairness",,,,,https://github.com/gntik-ai/falcone-s3/issues/10
+S3-QUOTA-001,Story,Implement Falcone quota admission and reservations,S3-QUOTA,P1,L,S3-CON-002;S3-AUTH-001,https://github.com/gntik-ai/falcone-s3/issues/43
+S3-QUOTA-002,Story,Implement usage accounting and provider reconciliation,S3-QUOTA,P1,L,S3-QUOTA-001;S3-PROV-001,https://github.com/gntik-ai/falcone-s3/issues/44
+S3-QUOTA-003,Story,Enforce direct-access policy and tenant fairness,S3-QUOTA,P1,M,S3-QUOTA-001;S3-PROV-001,https://github.com/gntik-ai/falcone-s3/issues/45
+S3-KEY,Epic,"Encryption, secret custody and network security",,,,,https://github.com/gntik-ai/falcone-s3/issues/11
+S3-KEY-001,Story,Implement native envelope encryption and key lifecycle,S3-KEY,P1,L,S3-CON-003;S3-AUTH-001,https://github.com/gntik-ai/falcone-s3/issues/46
+S3-KEY-002,Story,Integrate recoverable provider credentials and independent bootstrap,S3-KEY,P1,M,S3-CON-002;S3-AUTH-001,https://github.com/gntik-ai/falcone-s3/issues/47
+S3-KEY-003,Story,"Harden endpoint access, parsing and audit boundaries",S3-KEY,P1,L,S3-KEY-002;S3-API-002,https://github.com/gntik-ai/falcone-s3/issues/48
+S3-INT,Epic,Falcone consumer integration,,,,,https://github.com/gntik-ai/falcone-s3/issues/12
+S3-INT-001,Story,"Integrate serverless artifacts, results and checkpoints",S3-INT,P2,L,S3-API-001;S3-OBJ-003;S3-MPU-003;S3-LIFE-003,https://github.com/gntik-ai/falcone-s3/issues/49
+S3-INT-002,Story,Integrate workflow storage activities and large payloads,S3-INT,P2,L,S3-API-001;S3-OBJ-003;S3-LIFE-003,https://github.com/gntik-ai/falcone-s3/issues/50
+S3-INT-003,Story,"Integrate console, analytics and platform backup status",S3-INT,P2,M,S3-API-001;S3-PROV-003;S3-QUOTA-002;S3-OPS-003,https://github.com/gntik-ai/falcone-s3/issues/51
+S3-OPS,Epic,"Deployment, observability and recovery",,,,,https://github.com/gntik-ai/falcone-s3/issues/13
+S3-OPS-001,Story,Package restricted and external-only deployments,S3-OPS,P1,L,S3-CON-003;S3-PROV-001,https://github.com/gntik-ai/falcone-s3/issues/52
+S3-OPS-002,Story,"Implement storage SLOs, telemetry and incident runbooks",S3-OPS,P2,M,S3-OPS-001;S3-QUOTA-002;S3-EVENT-001,https://github.com/gntik-ai/falcone-s3/issues/53
+S3-OPS-003,Story,Implement coordinated backup and disaster recovery,S3-OPS,P2,L,S3-OPS-001;S3-KEY-001;S3-LIFE-003;S3-DATA-002,https://github.com/gntik-ai/falcone-s3/issues/54
+S3-MIG,Epic,"Migration, cutover and SeaweedFS retirement",,,,,https://github.com/gntik-ai/falcone-s3/issues/14
+S3-MIG-001,Story,Implement inventory and resumable verified transfers,S3-MIG,P2,L,S3-CON-001;S3-PROV-001,https://github.com/gntik-ai/falcone-s3/issues/55
+S3-MIG-002,Story,Implement fenced canary cutover and reconciled rollback,S3-MIG,P3,L,S3-MIG-001;S3-DEV-003;S3-INT-001;S3-INT-002;S3-INT-003,https://github.com/gntik-ai/falcone-s3/issues/56
+S3-MIG-003,Story,Retire migrated SeaweedFS dependencies with evidence,S3-MIG,P3,M,S3-MIG-002;S3-OPS-003,https://github.com/gntik-ai/falcone-s3/issues/57
+S3-DEV,Epic,Developer tooling and independent qualification,,,,,https://github.com/gntik-ai/falcone-s3/issues/15
+S3-DEV-001,Story,"Publish versioned schemas, SDK examples and local fixtures",S3-DEV,P1,M,S3-CON-001;S3-PROV-001,https://github.com/gntik-ai/falcone-s3/issues/58
+S3-DEV-002,Story,Implement secure builds and maintenance policy,S3-DEV,P1,M,S3-CON-003,https://github.com/gntik-ai/falcone-s3/issues/59
+S3-DEV-003,Story,"Qualify protocol, isolation and durability independently",S3-DEV,P2,L,S3-API-003;S3-KEY-003;S3-DATA-002;S3-OPS-003;S3-EVENT-002;S3-DEV-002,https://github.com/gntik-ai/falcone-s3/issues/60

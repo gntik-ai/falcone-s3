@@ -1,1 +1,242 @@
-{}
+{
+  "S3-CON": {
+    "number": 1,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/1"
+  },
+  "S3-PROV": {
+    "number": 2,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/2"
+  },
+  "S3-API": {
+    "number": 3,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/3"
+  },
+  "S3-AUTH": {
+    "number": 4,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/4"
+  },
+  "S3-OBJ": {
+    "number": 5,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/5"
+  },
+  "S3-MPU": {
+    "number": 6,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/6"
+  },
+  "S3-DATA": {
+    "number": 7,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/7"
+  },
+  "S3-LIFE": {
+    "number": 8,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/8"
+  },
+  "S3-EVENT": {
+    "number": 9,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/9"
+  },
+  "S3-QUOTA": {
+    "number": 10,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/10"
+  },
+  "S3-KEY": {
+    "number": 11,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/11"
+  },
+  "S3-INT": {
+    "number": 12,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/12"
+  },
+  "S3-OPS": {
+    "number": 13,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/13"
+  },
+  "S3-MIG": {
+    "number": 14,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/14"
+  },
+  "S3-DEV": {
+    "number": 15,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/15"
+  },
+  "S3-CON-001": {
+    "number": 16,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/16"
+  },
+  "S3-CON-002": {
+    "number": 17,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/17"
+  },
+  "S3-CON-003": {
+    "number": 18,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/18"
+  },
+  "S3-PROV-001": {
+    "number": 19,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/19"
+  },
+  "S3-PROV-002": {
+    "number": 20,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/20"
+  },
+  "S3-PROV-003": {
+    "number": 21,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/21"
+  },
+  "S3-API-001": {
+    "number": 22,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/22"
+  },
+  "S3-API-002": {
+    "number": 23,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/23"
+  },
+  "S3-API-003": {
+    "number": 24,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/24"
+  },
+  "S3-AUTH-001": {
+    "number": 25,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/25"
+  },
+  "S3-AUTH-002": {
+    "number": 26,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/26"
+  },
+  "S3-AUTH-003": {
+    "number": 27,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/27"
+  },
+  "S3-OBJ-001": {
+    "number": 28,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/28"
+  },
+  "S3-OBJ-002": {
+    "number": 29,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/29"
+  },
+  "S3-OBJ-003": {
+    "number": 30,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/30"
+  },
+  "S3-MPU-001": {
+    "number": 31,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/31"
+  },
+  "S3-MPU-002": {
+    "number": 32,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/32"
+  },
+  "S3-MPU-003": {
+    "number": 33,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/33"
+  },
+  "S3-DATA-001": {
+    "number": 34,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/34"
+  },
+  "S3-DATA-002": {
+    "number": 35,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/35"
+  },
+  "S3-DATA-003": {
+    "number": 36,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/36"
+  },
+  "S3-LIFE-001": {
+    "number": 37,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/37"
+  },
+  "S3-LIFE-002": {
+    "number": 38,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/38"
+  },
+  "S3-LIFE-003": {
+    "number": 39,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/39"
+  },
+  "S3-EVENT-001": {
+    "number": 40,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/40"
+  },
+  "S3-EVENT-002": {
+    "number": 41,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/41"
+  },
+  "S3-EVENT-003": {
+    "number": 42,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/42"
+  },
+  "S3-QUOTA-001": {
+    "number": 43,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/43"
+  },
+  "S3-QUOTA-002": {
+    "number": 44,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/44"
+  },
+  "S3-QUOTA-003": {
+    "number": 45,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/45"
+  },
+  "S3-KEY-001": {
+    "number": 46,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/46"
+  },
+  "S3-KEY-002": {
+    "number": 47,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/47"
+  },
+  "S3-KEY-003": {
+    "number": 48,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/48"
+  },
+  "S3-INT-001": {
+    "number": 49,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/49"
+  },
+  "S3-INT-002": {
+    "number": 50,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/50"
+  },
+  "S3-INT-003": {
+    "number": 51,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/51"
+  },
+  "S3-OPS-001": {
+    "number": 52,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/52"
+  },
+  "S3-OPS-002": {
+    "number": 53,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/53"
+  },
+  "S3-OPS-003": {
+    "number": 54,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/54"
+  },
+  "S3-MIG-001": {
+    "number": 55,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/55"
+  },
+  "S3-MIG-002": {
+    "number": 56,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/56"
+  },
+  "S3-MIG-003": {
+    "number": 57,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/57"
+  },
+  "S3-DEV-001": {
+    "number": 58,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/58"
+  },
+  "S3-DEV-002": {
+    "number": 59,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/59"
+  },
+  "S3-DEV-003": {
+    "number": 60,
+    "url": "https://github.com/gntik-ai/falcone-s3/issues/60"
+  }
+}
